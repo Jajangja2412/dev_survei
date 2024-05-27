@@ -19,13 +19,13 @@
      <tr> 
      <td width="156" style="background-color:#FFFFCC;"><strong>F1-1 NIP</strong></td>
      <td width="946">
-     <input border="2" size="40" type="text" name="nip" maxlength="8" value="" readonly />    </td>
+     <input border="2" size="40" type="text" name="nip" maxlength="8" value="{{ $karyawan->first()->nip; }}" readonly />    </td>
      </tr>
      
      <tr> 
      <td style="background-color:#FFFFCC;"><strong>F1-2 Nama Lengkap</strong></td>
      <td>
-     <input border="2" size="40" type="text" name="nama" maxlength="60" value=""  readonly />    </td>
+     <input border="2" size="40" type="text" name="nama" maxlength="60" value="{{ $karyawan->first()->nama; }}"  readonly />    </td>
      </tr>
      <tr> 
      <td width="156" style="background-color:#FFFFCC;"><strong>F1-3 Status</strong></td>
