@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Http\Request;
 use App\Models\Data;
-use App\Models\Qrcodepengumuman;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class BerandaController extends Controller
 {
@@ -15,6 +14,12 @@ class BerandaController extends Controller
     }
     public function ldtk()
     {
-        return view('survei.ldtk');
+        $email = Auth::user()->email;
+        $karyawan = DB::table('karyawanbs1')->where('email_bsi', $email)->get();
+
+        // dd($karyawan);
+        // die;
+
+        return view('survei.ldtk',compact('karyawan'));
     }
 }
