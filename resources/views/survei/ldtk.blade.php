@@ -5,7 +5,62 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-            <form name="form1" method="POST" action="" id="form_combo">
+            @if (session()->has('success'))
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span
+                            aria-hidden="true">&times;</span> </button>
+                    <h3 class="text-success"><i class="fa fa-check-circle"></i> {{ session('success') }}
+                    </h3>
+                </div>
+            @endif
+
+@if($kue_ldtk->first()->stat == 'x')
+<table border="0"  align="center" width="100%"   >
+<tr align=center > 
+  <br>
+
+  <p>
+  
+</p>
+
+</tr>
+</table>
+
+<script type="text/javascript" src="js/formretain.js"></script>
+<script type="text/javascript" src="js/FormManager.js"></script>
+
+<script type="text/javascript">
+window.onload = function() {
+    setupDependencies('weboptions'); //name of form(s). Seperate each with a comma (ie: 'weboptions', 'myotherform' )
+  };
+</script>
+
+<link rel="stylesheet" href="css/jquery-ui.css">
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui.js"></script> 
+ 
+<table border="0"   align="center" width="100%"   >
+  <tr align=center > 
+    <br>
+  <h3 align="center">&nbsp;&nbsp;Anda Sudah Mengisi Kuesioner</h3>
+            </div>
+             
+
+  
+</table>
+
+<!-- <h3 class="content-header">* Wajib Diisi</h3> -->
+<hr />
+                
+              </div>
+    
+ </div>
+
+<!-- Ini Buat  Penutup Tampilan -->
+ </div>
+@elseif($kue_ldtk->first()->stat != 'x')
+<form method="post" action="/simpan-ldtk" class="form-material m-t-40" id="form_combo" enctype="multipart/form-data">
+@csrf
  
  <table border="0" cellspacing="1" cellpadding="1" bgcolor="#FFFFFF" align="center" width="100%"   >
    <tr align=center > 
@@ -19,7 +74,10 @@
      <tr> 
      <td width="156" style="background-color:#FFFFCC;"><strong>F1-1 NIP</strong></td>
      <td width="946">
-     <input border="2" size="40" type="text" name="nip" maxlength="8" value="{{ $karyawan->first()->nip; }}" readonly />    </td>
+     <input border="2" size="40" type="text" name="nip" maxlength="8" value="{{ $karyawan->first()->nip; }}" readonly />  
+     <input border="2" size="40" type="hidden" name="stat" maxlength="8" value="x"/> 
+     <input border="2" size="40" type="hidden" name="tgl" maxlength="8" value="{{ date('Y-m-d') }}"/>   
+    </td>
      </tr>
      
      <tr> 
@@ -52,7 +110,7 @@
      <select name="upps">
          <option value="">--UPPS--</option>
                                             
-       <option value=""></option>
+       <option value="Tb Simatupang">Tb Simatupang</option>
                                    
      </select>
                                  
@@ -63,8 +121,9 @@
      <td width="946">
      <select id="nm_prodi" name="nm_prodi">
          <option value="">--Pilih Program Studi--</option>
-                                            
-       <option value=""></option> 		
+         @foreach ($jrs as $jr)                                   
+          <option value="{{ $jr->nm_jrs }}">{{ $jr->nm_jrs }}</option>
+         @endforeach 		
      </select>
                                  
      </td>
@@ -98,11 +157,9 @@
      </tr>
      <tr> 
    <td colspan="2">Kampus</td>
-   <td colspan="7" align="left"><select id="nm_jrs" name="kampus">
-         <option value="">--Pilih Kampus--</option>
-                                            
-       <option value=""></option>                                  
-     </select></td>
+   <td colspan="7" align="left">
+     <input type="text" class="form" name="kampus" value="TB Simpatupang"/>
+    </td>
      </tr>
     <tr> 
      <td colspan="11" style="background-color:#330; font-weight:bold; color:#FFFFFF;" align="left"><strong>Berikan penilaian mengenai persepsi anda terhadap Sarana yang ada di Dosen/ruang kerja Kampus</strong></td>
@@ -1098,7 +1155,7 @@
    </tr>
  </table>
  </form>		
-                
+@endif                
             </div>
         </div>
         
