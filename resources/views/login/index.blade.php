@@ -34,7 +34,7 @@
     <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">Saldo Alfaqih</p>
+            <p class="loader__label">Survei USI</p>
         </div>
     </div>
     <!-- ============================================================== -->
@@ -90,7 +90,7 @@
                         </div> -->
                         <div class="form-group text-center">
                             <div class="col-xs-12 p-b-20">
-                                <button class="btn btn-block btn-lg btn-info btn-rounded" type="submit">Masuk
+                                <button class="btn btn-block btn-lg btn-info btn-rounded" type="submit">Masuk oke
 
                                 </button>
 
