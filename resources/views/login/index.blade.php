@@ -90,7 +90,7 @@
                         </div> -->
                         <div class="form-group text-center">
                             <div class="col-xs-12 p-b-20">
-                                <button class="btn btn-block btn-lg btn-info btn-rounded" type="submit">Masuk oke
+                                <button class="btn btn-block btn-lg btn-info btn-rounded" type="submit">Masuk
 
                                 </button>
 
