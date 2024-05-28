@@ -6,8 +6,12 @@
                     <ul id="sidebarnav">
                         <li class="user-pro"> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><img src="assets/images/users/logo_cyber.png" alt="user-img" class="img-circle">{{ Auth::user()->name }}<span class="hide-menu"></span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="https://staff.bsi.ac.id/ruang_utama_karyawan.html"><i class="ti-home"></i>Beranda</a></li>
-                                <li><a href="http://www.bsi.ac.id/ubsi/index.ajax"><i class="fa fa-power-off"></i> Logout</a></li>
+                                <!-- <li><a href="https://staff.bsi.ac.id/ruang_utama_karyawan.html"><i class="ti-home"></i>Beranda</a></li> -->
+                                <form action="/logout" method="POST" style="display: inline;">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Logout</button>
+                                </form>
+                                
                             </ul>
                         </li>
                         <li class="nav-small-cap">--- PERSONAL</li>
