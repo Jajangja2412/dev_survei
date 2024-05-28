@@ -9,6 +9,10 @@ use App\Models\KuesionerDosenTendik;
 
 class BerandaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         return view('beranda.beranda');

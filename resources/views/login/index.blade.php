@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/mitradiani_ok.png') }}"> -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/BRI_institute.png') }}">
     <title>{{ config('app.name', 'Survei') }}</title>
 
     <!-- page css -->

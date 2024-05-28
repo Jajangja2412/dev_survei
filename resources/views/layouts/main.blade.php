@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/BRI_institute.png') }}">
     <title>Survei USI</title>
     <!-- This page CSS -->
     <!-- chartist CSS -->
