@@ -13,7 +13,7 @@
                             <!-- <img src="../assets/images/logo-icon.png" alt="homepage" class="light-logo" /> -->
                         </b>
                         <!--End Logo icon -->
-                        <span class="hidden-xs"><span class="font-bold">Survei</span>UBSI</span>
+                        <span class="hidden-xs"><span class="font-bold">Survei</span>USI</span>
                     </a>
                 </div>
                 <!-- ============================================================== -->

@@ -11,7 +11,7 @@
     <!-- Favicon icon -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/mitradiani_ok.png') }}"> -->
-    <title>{{ config('app.name', 'Keuangan') }}</title>
+    <title>{{ config('app.name', 'Survei') }}</title>
 
     <!-- page css -->
     <link href="{{ asset('dist/css/pages/login-register-lock.css') }}" rel="stylesheet">
@@ -45,6 +45,12 @@
         <div class="login-register" style="background-image:url(../assets/images/background/login-register.jpg);">
             <div class="login-box card">
                 <div class="card-body">
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
                     <form class="form-horizontal form-material" method="post" action="/login">
 
                         @csrf
