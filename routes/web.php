@@ -22,16 +22,20 @@ use App\Http\Controllers\LoginController;
 /* =======================================================================*/
 /* ========================== Halaman Login  =========================*/
 /* =======================================================================*/
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 /* =======================================================================*/
 /* ========================== Halaman Login  =========================*/
 /* =======================================================================*/
+Route::middleware(['auth'])->group(function () {
 
-Route::get('/beranda', [BerandaController::class, 'index'])->name('index');
-Route::get('/layanan_dosen_tendik', [BerandaController::class, 'ldtk'])->name('ldtk');
-Route::post('/simpan-ldtk', [BerandaController::class, 'simpan_ldtk'])->name('simpan_ldtk');
+    Route::get('/beranda', [BerandaController::class, 'index'])->name('index');
+    Route::get('/layanan_dosen_tendik', [BerandaController::class, 'ldtk'])->name('ldtk');
+    Route::post('/simpan-ldtk', [BerandaController::class, 'simpan_ldtk'])->name('simpan_ldtk');
 
-Route::get('/', function () {
-    return view('login.index');
+    Route::get('/', function () {
+        return view('login.index');
+    });
+
 });
