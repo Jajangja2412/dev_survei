@@ -23,7 +23,7 @@ class LoginController extends Controller
 
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/beranda')->with('success', 'Selamat datang di web survei Universitas Siber Indonesia !');
+            return redirect()->intended('/beranda')->with('success', 'anda berhasil login ke survei.cyber-univ.ac.id !');
         }
 
         return back()->with('loginError', 'Login Gagal!');
