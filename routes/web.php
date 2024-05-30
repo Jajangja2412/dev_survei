@@ -18,6 +18,9 @@ use App\Http\Controllers\LoginController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('/', function () {
+    return view('login.index');
+});
 
 /* =======================================================================*/
 /* ========================== Halaman Login  =========================*/
@@ -34,8 +37,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/layanan_dosen_tendik', [BerandaController::class, 'ldtk'])->name('ldtk');
     Route::post('/simpan-ldtk', [BerandaController::class, 'simpan_ldtk'])->name('simpan_ldtk');
 
-    Route::get('/', function () {
-        return view('login.index');
-    });
+  
 
 });
