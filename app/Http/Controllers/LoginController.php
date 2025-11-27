@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Models\KaryawanBs1;
 
 class LoginController extends Controller
 {
@@ -17,13 +19,19 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
-            'email' => 'required',
+            'nip' => 'required',
             'password' => 'required'
         ]);
 
-        if(Auth::attempt($credentials)) {
+        // Cari pengguna berdasarkan NIP
+        $user = KaryawanBs1::where('nip', $credentials['nip'])->first();
+
+        // Verifikasi `password` dengan `passinter`
+        if ($user && Hash::check($credentials['password'], $user->passinter)) {
+            // Login manual tanpa `Auth::attempt`
+            Auth::login($user);
             $request->session()->regenerate();
-            return redirect()->intended('/beranda')->with('success', 'anda berhasil login ke survei.cyber-univ.ac.id !');
+            return redirect()->intended('/beranda')->with('success', 'Anda berhasil login ke survei.cyber-univ.ac.id!');
         }
 
         return back()->with('loginError', 'Login Gagal!');
@@ -34,7 +42,6 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/')->with('success', 'anda sudah keluar dari aplikasi !');
-
+        return redirect('/')->with('success', 'Anda sudah keluar dari aplikasi!');
     }
 }

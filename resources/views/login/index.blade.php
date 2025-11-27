@@ -66,9 +66,9 @@
                         <img src="{{ asset('assets/images/users/logo_cyber.png') }}" alt="homepage" class="light-logo" width="200" heigth="300"/></center>
                         <div class="form-group ">
                             <div class="col-xs-12"> <input
-                                    class="form-control @error('email') is-invalid @enderror" type="text" required=""
-                                    placeholder="Username" name="email" autofocus required value="{{ old('email') }}">
-                                @error('email')
+                                    class="form-control @error('nip') is-invalid @enderror" type="text" required=""
+                                    placeholder="Username" name="nip" autofocus required value="{{ old('nip') }}">
+                                @error('nip')
 
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -120,12 +120,12 @@
                         <div class="form-group ">
                             <div class="col-xs-12">
                                 <h3>Recover Password</h3>
-                                <p class="text-muted">Enter your Email and instructions will be sent to you! </p>
+                                <p class="text-muted">Enter your Nip and instructions will be sent to you! </p>
                             </div>
                         </div>
                         <div class="form-group ">
                             <div class="col-xs-12">
-                                <input class="form-control" type="text" required="" placeholder="Email">
+                                <input class="form-control" type="text" required="" placeholder="Nip">
                             </div>
                         </div>
                         <div class="form-group text-center m-t-20">

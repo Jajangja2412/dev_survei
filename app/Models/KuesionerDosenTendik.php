@@ -10,6 +10,12 @@ class KuesionerDosenTendik extends Model
     use HasFactory;
     protected $table = 'kuesioner_dosen_tendik';
 
+     // Tentukan primary key yang digunakan
+     protected $primaryKey = 'nip';  // Gunakan nip sebagai primary key
+
+     // Jika nip bukan auto increment
+     public $incrementing = false;  // Menonaktifkan auto increment pada nip
+
     // Define the columns you want to be mass assignable
     // Nonaktifkan timestamps
     public $timestamps = false;

@@ -158,7 +158,7 @@ window.onload = function() {
      <tr> 
    <td colspan="2">Kampus</td>
    <td colspan="7" align="left">
-     <input type="text" class="form" name="kampus" value="TB Simpatupang"/>
+     <input type="text" class="form" name="kampus" value="TB Simatupang" disabled/>
     </td>
      </tr>
     <tr> 
@@ -448,7 +448,7 @@ window.onload = function() {
                      <td align="center"><div class="radio"><label><input name="f217h" type="radio"  value="3" /><span class="custom-radio"></span></label></div></td>
                      <td align="center"><div class="radio"><label><input name="f217h" type="radio"  value="4" /><span class="custom-radio"></span></label></div></td>
                      <td align="center"><div class="radio"><label><input name="f217h" type="radio"  value="5" /><span class="custom-radio"></span></label></div></td>
-                     <td align="center"><p align="center">Web ruang karyawan staff.bsi.ac.id </p>
+                     <td align="center"><p align="center">Web ruang karyawan staff.cyber-univ.ac.id </p>
                      [<strong>(F2-17)</strong>]</td>
                      <td align="center"><div class="radio"><label><input name="f217k" type="radio"  value="1" /><span class="custom-radio"></span></label></div></td>
                      <td align="center"><div class="radio"><label><input name="f217k" type="radio"  value="2" /><span class="custom-radio"></span></label></div></td>
@@ -462,7 +462,7 @@ window.onload = function() {
                      <td align="center"><div class="radio"><label><input name="f218h" type="radio"  value="3" /><span class="custom-radio"></span></label></div></td>
                      <td align="center"><div class="radio"><label><input name="f218h" type="radio"  value="4" /><span class="custom-radio"></span></label></div></td>
                      <td align="center"><div class="radio"><label><input name="f218h" type="radio"  value="5" /><span class="custom-radio"></span></label></div></td>
-                     <td align="center"><p align="center">Web ruang karyawan kampusonline.bsi.ac.id </p>
+                     <td align="center"><p align="center">Aplikasi mobile MyCyber staff </p>
                      [<strong>(F2-18)</strong>]</td>
                      <td align="center"><div class="radio"><label><input name="f218k" type="radio"  value="1" /><span class="custom-radio"></span></label></div></td>
                      <td align="center"><div class="radio"><label><input name="f218k" type="radio"  value="2" /><span class="custom-radio"></span></label></div></td>
@@ -1146,12 +1146,8 @@ window.onload = function() {
    <tr align=center > 
      <td colspan="2" style="background-color:#FFFFCC; font-weight:bold; color:#FFFFFF;">    </td>  </tr>
    <tr align=center > 
-     <!-- <a href="beranda_.html" class="btn btn-success">Simpan</a> -->
-     <?php 
-     // echo "<script language='javascript'>
-     //             window.alert('Kuesioner belum bisa disimpan, belum waktunya');</script>"
-     ?>
-     <td colspan="2" style="background-color:#FFFFCC; font-weight:bold; color:#FFFFFF;"><input type="submit" name="Submit" value="Simpan Form Kuesioner" class="btn btn-success"/></td>
+    
+     <td colspan="2" style="background-color:#FFFFCC; font-weight:bold; color:#FFFFFF;"><input type="submit" name="Submit" value="Simpan Form Kuesioner" class="btn btn-success" {{ $isEnabled ? '' : 'disabled' }}/></td>
    </tr>
  </table>
  </form>		
